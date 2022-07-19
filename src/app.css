@@ -1,0 +1,80 @@
+.main-widget {
+  max-width: 700px;
+  padding: 1rem;
+  margin: 1rem auto;
+  background-color: white;
+  border-radius: 10px;
+  font-family: "Noto Sans", sans-serif;
+}
+.small-text {
+  font-size: 1rem;
+}
+
+.daily-temp {
+  font-size: 3.5rem;
+}
+
+.navigation-tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nvg-link {
+  color: #000;
+  text-decoration: none;
+  padding: 6px 6px;
+  display: inline-flex;
+  flex-direction: column;
+  transition: all 150ms ease-in-out;
+}
+
+.nvg-link:hover {
+  font-weight: bold;
+  color: #000000;
+}
+
+.nvg-link:active {
+  border-top: 2px solid #000;
+  color: #000000;
+  font-weight: bold;
+}
+
+.weather-active-tab {
+  margin: 1rem;
+  margin-right: 0;
+  border-radius: 10px;
+}
+
+#celsius-link {
+  text-decoration: none;
+  color: #000000;
+  font-size: 1rem;
+}
+
+#celsius-link:hover {
+  color: #000000;
+}
+
+#farenheit-link {
+  text-decoration: none;
+  color: #818080;
+  font-size: 1rem;
+}
+
+#farenheit-link:hover {
+  color: #000000;
+}
+
+.forecast-parameters {
+  margin-top: 2rem;
+  list-style: none;
+  padding: 0;
+}
+.current-location {
+  color: rgb(112, 112, 128);
+  text-decoration: underline;
+  border: none;
+  background-color: #fff;
+  float: right;
+  line-height: 2rem;
+}
