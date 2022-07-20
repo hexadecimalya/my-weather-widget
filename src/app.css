@@ -71,6 +71,7 @@
   padding: 0;
 }
 .current-location {
+  margin-top: 1rem;
   color: rgb(112, 112, 128);
   text-decoration: underline;
   border: none;
