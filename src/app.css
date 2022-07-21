@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(245, 243, 243);
+}
 .main-widget {
   max-width: 700px;
   padding: 1rem;
