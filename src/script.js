@@ -106,7 +106,6 @@ farenheitLink.isCelsius = false;
 function showWeatherParams(response) {
   tempCelsius = Math.round(response.data.main.temp);
   tempFarenheit = celToFarenheit(tempCelsius);
-
   console.log(response);
   console.log(response.status_code);
   let currentCity = document.querySelector("#current-city");
@@ -120,12 +119,14 @@ function showWeatherParams(response) {
   windElem.innerHTML = Math.round(response.data.wind.speed);
   let pressureElem = document.querySelector("#pressure");
   pressureElem.innerHTML = response.data.main.pressure;
+  searchInput.value = "";
+  setImageByCondition(response.data);
 }
 
 function getCurrentCity(response) {
   let currentCity = document.querySelector("#current-city");
   currentCity.innerHTML = response.data.name;
-  console.log(currentCity);
+  //console.log(currentCity);
 }
 
 function handleSuccessPosition(position) {
@@ -145,6 +146,13 @@ function getPosition() {
     handleSuccessPosition,
     positionFailed
   );
+}
+
+function setImageByCondition(condition) {
+  let imageCode = condition.weather[0].icon;
+  let weatherImageElem = document.querySelector("#image-weather-main");
+  let imageUrl = `http://openweathermap.org/img/wn/${imageCode}@2x.png`;
+  weatherImageElem.innerHTML = `<img src="${imageUrl}" alt="" />`;
 }
 
 let currentCityButton = document.querySelector("#current-position");
