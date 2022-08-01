@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;600&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -23,6 +23,11 @@
   </head>
   <body>
     <div class="container main-widget shadow p-3 mb-5 bg-body rounded">
+      <div class="wrapper">
+        <button id="current-position" class="current-location">
+          📍Set current location
+        </button>
+      </div>
       <form id="search-form">
         <input
           class="form-control"
@@ -32,49 +37,41 @@
           placeholder="Type any city..."
         />
       </form>
-      <div class="wrapper">
-        <button id="current-position" class="current-location">
-          📍Set current location
-        </button>
-      </div>
-      <div class="row">
-        <div class="col weather-active-tab">
-          <div class="row mb-2">
-            <div id="current-city" class="h1 col-6 mt-3 text-wrap"></div>
-            <div id="current-datetime" class="h3 mt-4 col-6"></div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <div class="row">
-                <div class="col-8 h2 mb-0 text-body daily-temp">
-                  <span id="current-temp"></span
-                  ><a id="celsius-link" href="#">°C|</a
-                  ><a id="farenheit-link" href="#">°F</a>
-                </div>
-                <div class="row">
-                  <div class="col-8 pt-0 mb-2">
-                    <ul class="forecast-parameters">
-                      <li>humidity: <span id="humidity"></span>%</li>
-                      <li>pressure: <span id="pressure"></span> hPa</li>
-                      <li>wind speed: <span id="wind"></span> m/s</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-4" id="image-weather-main"></div>
-          </div>
+      <div class="weather-active-tab">
+        <div class="row mb-2">
+          <div
+            id="current-city"
+            class="h1 col-6 mt-3 text-wrap current-city"
+          ></div>
+          <div id="current-datetime" class="h4 mt-4 col-6 text-end"></div>
         </div>
         <div class="row">
-          <ul class="navigation-tabs">
-            <a class="nvg-link" aria-current="page" href="#">☀️ Today</a>
-            <a class="nvg-link" href="#">🌥 Day 2</a>
-            <a class="nvg-link" href="#">🌨 Day 3</a>
-            <a class="nvg-link" href="#">🌨 Day 4</a>
-            <a class="nvg-link" href="#">☀️Day 5</a>
-            <a class="nvg-link" href="#">⛅️ Day 6</a>
-          </ul>
+          <div class="col-5 daily-temp">
+            <span id="current-temp"></span><a id="celsius-link" href="#"> °C</a
+            ><span class="separating-pipe">|</span
+            ><a id="farenheit-link" href="#">°F</a>
+            <p id="weather-description" class="weather-description"></p>
+          </div>
+          <div class="col-2 text-center" id="image-weather-main"></div>
+          <div class="col-5 pt-0 mb-2">
+            <ul class="forecast-parameters text-end">
+              <li>humidity: <span id="humidity"></span>%</li>
+              <li>pressure: <span id="pressure"></span> hPa</li>
+              <li>wind speed: <span id="wind"></span> m/s</li>
+            </ul>
+          </div>
         </div>
+      </div>
+      <hr />
+      <div class="row">
+        <ul class="navigation-tabs">
+          <a class="nvg-link" aria-current="page" href="#">☀️ Today</a>
+          <a class="nvg-link" href="#">🌥 Day 2</a>
+          <a class="nvg-link" href="#">🌨 Day 3</a>
+          <a class="nvg-link" href="#">🌨 Day 4</a>
+          <a class="nvg-link" href="#">☀️Day 5</a>
+          <a class="nvg-link" href="#">⛅️ Day 6</a>
+        </ul>
       </div>
     </div>
     <div class="footer">

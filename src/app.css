@@ -2,12 +2,12 @@ body {
   background-color: rgb(245, 243, 243);
 }
 .main-widget {
-  max-width: 700px;
+  max-width: 650px;
   padding: 1rem;
   margin: 1rem auto;
   background-color: white;
   border-radius: 10px;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Nunito Sans", sans-serif;
 }
 .small-text {
   font-size: 1rem;
@@ -32,14 +32,17 @@ body {
 }
 
 .nvg-link:hover {
+  color: #000;
   font-weight: bold;
-  color: #000000;
+  background-color: #f3ecec9a;
+  border-radius: 10px;
 }
 
 .nvg-link:active {
-  border-top: 2px solid #000;
-  color: #000000;
   font-weight: bold;
+  color: #000;
+  background-color: #f3ecec9a;
+  border-radius: 10px;
 }
 
 .weather-active-tab {
@@ -47,7 +50,7 @@ body {
   border-radius: 10px;
 }
 
-#celsius-link {
+.daily-temp #celsius-link {
   text-decoration: none;
   color: #000000;
   font-size: 1rem;
@@ -57,7 +60,7 @@ body {
   color: #000000;
 }
 
-#farenheit-link {
+.daily-temp #farenheit-link {
   text-decoration: none;
   color: #818080;
   font-size: 1rem;
@@ -67,10 +70,14 @@ body {
   color: #000000;
 }
 
+.separating-pipe {
+  color: #818080;
+  font-size: 1rem;
+}
 .forecast-parameters {
-  margin-top: 2rem;
   list-style: none;
   padding: 0;
+  color: rgb(112, 112, 128);
 }
 
 .wrapper {
@@ -79,8 +86,8 @@ body {
 }
 .current-location {
   display: flex;
-  margin-top: 1rem;
-  color: rgb(112, 112, 128);
+  margin-bottom: 0.5rem;
+  color: #818080;
   text-decoration: underline;
   border: none;
   background-color: #fff;
@@ -88,4 +95,13 @@ body {
 
 .footer {
   text-align: center;
+}
+
+.current-city {
+  font-weight: 600;
+}
+
+.daily-temp .weather-description {
+  font-size: 1.2rem;
+  text-decoration: overline;
 }

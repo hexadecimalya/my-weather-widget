@@ -47,9 +47,6 @@ function setCurrentDateTime() {
   dateTimeBlock.innerHTML = dateTime;
 }
 
-setCurrentDateTime();
-setInterval(setCurrentDateTime, 10000);
-
 //setting current city
 function cityNotFound(error) {
   if (error.response.status === 404) {
@@ -72,7 +69,7 @@ function searchCity(event) {
   }
 }
 
-setWeatherByName();
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
 
@@ -107,10 +104,10 @@ function showWeatherParams(response) {
   tempCelsius = Math.round(response.data.main.temp);
   tempFarenheit = celToFarenheit(tempCelsius);
   console.log(response);
-  console.log(response.status_code);
+  //console.log(response.status);
   let currentCity = document.querySelector("#current-city");
   let searchInput = document.querySelector("#city-input");
-  currentCity.innerHTML = searchInput.value ? response.data.name : "Kyiv";
+  currentCity.innerHTML = response.data.name;
   let tempElement = document.querySelector("#current-temp");
   tempElement.innerHTML = tempCelsius;
   let humidityElem = document.querySelector("#humidity");
@@ -119,6 +116,8 @@ function showWeatherParams(response) {
   windElem.innerHTML = Math.round(response.data.wind.speed);
   let pressureElem = document.querySelector("#pressure");
   pressureElem.innerHTML = response.data.main.pressure;
+  let descriptionElem = document.querySelector("#weather-description");
+  descriptionElem.innerHTML = response.data.weather[0].description;
   searchInput.value = "";
   setImageByCondition(response.data);
 }
@@ -133,7 +132,7 @@ function handleSuccessPosition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiUrlCoords = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrlCoords).then(getCurrentCity);
+  // axios.get(apiUrlCoords).then(getCurrentCity);
   axios.get(apiUrlCoords).then(showWeatherParams);
 }
 
@@ -157,3 +156,8 @@ function setImageByCondition(condition) {
 
 let currentCityButton = document.querySelector("#current-position");
 currentCityButton.addEventListener("click", getPosition);
+
+setCurrentDateTime();
+setInterval(setCurrentDateTime, 10000);
+
+setWeatherByName();
