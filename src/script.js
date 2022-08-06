@@ -69,7 +69,6 @@ function searchCity(event) {
   }
 }
 
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
 
@@ -154,6 +153,26 @@ function setImageByCondition(condition) {
   weatherImageElem.innerHTML = `<img src="${imageUrl}" alt="" />`;
 }
 
+function displayForecast() {
+  let forecastElem = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`
+  let days = ["Fri", "Sat", "Sun", "Mon"];
+
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML + `<div class="col-2">
+    <div class="forecast-date">${day}</div>
+    <img src="http://openweathermap.org/img/wn/01d.png" alt="" width="42" />
+    <div class="forecast-temps">
+      <span class="forecast-temp-max"> 30° </span>
+      <span class="forecast-temp-min"> 19° </span>
+    </div>
+  </div>`;
+
+  })
+  forecastHTML = forecastHTML + `</div>`
+  forecastElem.innerHTML = forecastHTML;
+}
+
 let currentCityButton = document.querySelector("#current-position");
 currentCityButton.addEventListener("click", getPosition);
 
@@ -161,3 +180,4 @@ setCurrentDateTime();
 setInterval(setCurrentDateTime, 10000);
 
 setWeatherByName();
+displayForecast();

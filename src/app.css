@@ -17,34 +17,6 @@ body {
   font-size: 3.5rem;
 }
 
-.navigation-tabs {
-  display: flex;
-  justify-content: space-around;
-}
-
-.nvg-link {
-  color: #000;
-  text-decoration: none;
-  padding: 6px 6px;
-  display: inline-flex;
-  flex-direction: column;
-  transition: all 150ms ease-in-out;
-}
-
-.nvg-link:hover {
-  color: #000;
-  font-weight: bold;
-  background-color: #f3ecec9a;
-  border-radius: 10px;
-}
-
-.nvg-link:active {
-  font-weight: bold;
-  color: #000;
-  background-color: #f3ecec9a;
-  border-radius: 10px;
-}
-
 .weather-active-tab {
   margin: 0 1rem;
   border-radius: 10px;
@@ -105,3 +77,22 @@ body {
   font-size: 1.2rem;
   text-decoration: overline;
 }
+
+.forecast-block .row{
+  text-align: center;
+  justify-content: space-around;
+}
+
+.forecast-block .col-2:hover{
+  background-color: rgb(247, 240, 216);
+  border-radius: 10px;
+}
+.forecast-temp-min{
+  color: #818080;
+}
+
+.forecast-date{
+  font-weight: 600;
+}
+
+
