@@ -1,11 +1,11 @@
 body {
-  background-color: rgb(245, 243, 243);
+  background-color: #fffafa;
 }
 .main-widget {
   max-width: 650px;
+  background-color: #d2e3fa;
   padding: 1rem;
   margin: 1rem auto;
-  background-color: white;
   border-radius: 10px;
   font-family: "Nunito Sans", sans-serif;
 }
@@ -28,24 +28,6 @@ body {
   font-size: 1rem;
 }
 
-#celsius-link:hover {
-  color: #000000;
-}
-
-.daily-temp #farenheit-link {
-  text-decoration: none;
-  color: #818080;
-  font-size: 1rem;
-}
-
-#farenheit-link:hover {
-  color: #000000;
-}
-
-.separating-pipe {
-  color: #818080;
-  font-size: 1rem;
-}
 .forecast-parameters {
   list-style: none;
   padding: 0;
@@ -62,7 +44,7 @@ body {
   color: #818080;
   text-decoration: underline;
   border: none;
-  background-color: #fff;
+  background-color: #d2e3fa;
 }
 
 .footer {
@@ -78,21 +60,23 @@ body {
   text-decoration: overline;
 }
 
-.forecast-block .row{
+.forecast-block .row {
   text-align: center;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.forecast-block .col-2:hover{
-  background-color: rgb(247, 240, 216);
+.forecast-block .col-2:hover {
+  background-color: #bbd5fa;
   border-radius: 10px;
 }
-.forecast-temp-min{
+.forecast-temp-min {
   color: #818080;
 }
 
-.forecast-date{
+.forecast-date {
   font-weight: 600;
 }
+
 
 
