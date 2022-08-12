@@ -1,6 +1,7 @@
 body {
   background-color: #fffafa;
 }
+
 .main-widget {
   max-width: 650px;
   background-color: #d2e3fa;
@@ -8,9 +9,6 @@ body {
   margin: 1rem auto;
   border-radius: 10px;
   font-family: "Nunito Sans", sans-serif;
-}
-.small-text {
-  font-size: 1rem;
 }
 
 .daily-temp {
@@ -56,17 +54,20 @@ body {
 }
 
 .daily-temp .weather-description {
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: overline;
 }
 
 .forecast-block .row {
   text-align: center;
   justify-content: space-around;
-  flex-wrap: wrap;
 }
 
-.forecast-block .col-2:hover {
+.forecast-block .forecast-element {
+  width: 6rem;
+}
+
+.forecast-block .forecast-element:hover {
   background-color: #bbd5fa;
   border-radius: 10px;
 }
@@ -78,5 +79,30 @@ body {
   font-weight: 600;
 }
 
+@media (max-width: 583px) {
+  .forecast-block .forecast-element {
+    padding-bottom: 1.5rem;
+    width: 7rem;
+  }
+}
+
+@media (max-width: 429px) {
+  .daily-temp {
+    font-size: 2.5rem;
+  }
+
+  .daily-temp .weather-description {
+    font-size: 0.8rem;
+    text-decoration: overline;
+  }
+
+  .forecast-parameters {
+    font-size: 0.8rem;
+  }
+
+  .datetime {
+    font-size: 1rem;
+  }
 
 
+}

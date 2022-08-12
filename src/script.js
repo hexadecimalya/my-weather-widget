@@ -137,10 +137,10 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row">`;
 
   forecast.forEach(function (forecastDay, index) {
-    if (index > 0 && index < 6) {
+    if (index > 0 && index < 7) {
       forecastHTML =
         forecastHTML +
-        `<div class="col-2">
+        `<div class="col-2 forecast-element">
     <div class="forecast-date">${formatDay(forecastDay.dt)}</div>
     <img src="http://openweathermap.org/img/wn/${
       forecastDay.weather[0].icon
